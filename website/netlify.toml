@@ -1,0 +1,28 @@
+[build]
+  publish = "build/"
+  command = "yarn build"
+  environment = { NODE_VERSION = "16.13.1" }
+
+[context.production]
+  ignore = "false"
+
+[context.deploy-preview]
+  ignore = "false"
+
+[[redirects]]
+  # Embargoes compliance. DO NOT REMOVE
+  conditions = {Country = ["CU", "IR", "KP", "SY", "UA"]}
+  from = "/*"
+  to = "/restricted"
+  status = 302
+  force = true
+
+[[redirects]]
+from = "/t"
+to = "https://api.amplitude.com"
+status = 200
+
+[[redirects]]
+from = "/reference"
+to = "/reference/alpine"
+status = 302

@@ -1,0 +1,72 @@
+name: "Test Integration"
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "**.sh"
+      - "**.bash"
+      - "**.go"
+      - "**.cue"
+      - "**.bats"
+      - "Makefile"
+      - "go.mod"
+      - "go.sum"
+      - ".github/workflows/test-integration.yml"
+      - "!docs/**"
+
+  pull_request:
+    branches: [ main ]
+    paths:
+      - "**.sh"
+      - "**.bash"
+      - "**.go"
+      - "**.cue"
+      - "**.bats"
+      - "Makefile"
+      - "go.mod"
+      - "go.sum"
+      - ".github/workflows/test-integration.yml"
+      - "!docs/**"
+
+jobs:
+  test-integration:
+    name: "Integration Tests"
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: "Check out"
+        uses: actions/checkout@v2
+
+      - name: "Setup Go"
+        uses: actions/setup-go@v1
+        with:
+          go-version: 1.16
+
+      - name: "Install CUE"
+        run: |
+          export CUE_VERSION="$(grep cue ./go.mod | cut -d' ' -f2 | head -1 | sed -E 's/\.[[:digit:]]\.[[:alnum:]]+-[[:alnum:]]+$//')"
+          export CUE_TARBALL="cue_${CUE_VERSION}_linux_amd64.tar.gz"
+          echo "Installing cue version $CUE_VERSION"
+          curl -L https://github.com/cue-lang/cue/releases/download/${CUE_VERSION}/${CUE_TARBALL} | sudo tar zxf - -C /usr/local/bin
+
+      - name: "Install SOPS"
+        run: |
+          # SOPS
+          sudo curl -L -o /usr/local/bin/sops https://github.com/mozilla/sops/releases/download/v3.7.1/sops-v3.7.1.linux
+          sudo chmod +x /usr/local/bin/sops
+
+      - name: "Import Dagger private key"
+        run: |
+          mkdir -p ~/.config/dagger
+          cp ./tests/age_key.txt ~/.config/dagger/keys.txt
+
+      - name: "Expose GitHub Runtime"
+        uses: crazy-max/ghaction-github-runtime@v1
+
+      - name: Test
+        env:
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          env
+          make core-integration
