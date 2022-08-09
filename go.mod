@@ -7,7 +7,7 @@ require (
 	github.com/KromDaniel/jonson v0.0.0-20180630143114-d2f9c3c389db
 	github.com/Microsoft/go-winio v0.5.2
 	github.com/containerd/console v1.0.3
-	github.com/containerd/containerd v1.6.2
+	github.com/containerd/containerd v1.6.8
 	github.com/docker/buildx v0.8.1
 	github.com/docker/distribution v2.8.1+incompatible
 	github.com/emicklei/proto v1.9.0 // indirect
@@ -22,7 +22,7 @@ require (
 	github.com/moby/buildkit v0.10.0
 	github.com/morikuni/aec v1.0.0
 	github.com/opencontainers/go-digest v1.0.0
-	github.com/opencontainers/image-spec v1.0.2
+	github.com/opencontainers/image-spec v1.0.3-0.20211202183452-c5a74bcca799
 	github.com/rs/zerolog v1.26.1
 	github.com/sergi/go-diff v1.2.0
 	github.com/spf13/cobra v1.4.0
