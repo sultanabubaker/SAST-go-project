@@ -36,7 +36,7 @@ require (
 	go.opentelemetry.io/otel/sdk v1.6.1
 	go.opentelemetry.io/otel/trace v1.6.1
 	golang.org/x/mod v0.6.0-dev.0.20211013180041-c96bc1413d57
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
+	golang.org/x/sync v0.3.0
 	golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	golang.org/x/tools v0.1.8 // indirect
