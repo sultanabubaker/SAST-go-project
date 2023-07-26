@@ -5,13 +5,13 @@ go 1.16
 require (
 	cuelang.org/go v0.4.1-rc.1.0.20220106143633-60d6503d1974
 	github.com/KromDaniel/jonson v0.0.0-20180630143114-d2f9c3c389db
-	github.com/Microsoft/go-winio v0.5.2
+	github.com/Microsoft/go-winio v0.6.1
 	github.com/containerd/console v1.0.3
 	github.com/containerd/containerd v1.6.2
 	github.com/docker/buildx v0.8.1
 	github.com/docker/distribution v2.8.1+incompatible
 	github.com/emicklei/proto v1.9.0 // indirect
-	github.com/go-git/go-git/v5 v5.4.2
+	github.com/go-git/go-git/v5 v5.8.1
 	github.com/gofrs/flock v0.8.1
 	github.com/google/uuid v1.3.0
 	github.com/hashicorp/go-version v1.4.0
@@ -35,13 +35,12 @@ require (
 	go.opentelemetry.io/otel/exporters/jaeger v1.6.1
 	go.opentelemetry.io/otel/sdk v1.6.1
 	go.opentelemetry.io/otel/trace v1.6.1
-	golang.org/x/mod v0.6.0-dev.0.20211013180041-c96bc1413d57
-	golang.org/x/sync v0.0.0-20210220032951-036812b2e83c
-	golang.org/x/term v0.0.0-20210615171337-6886f2dfbf5b
+	golang.org/x/mod v0.8.0
+	golang.org/x/sync v0.1.0
+	golang.org/x/term v0.10.0
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
-	golang.org/x/tools v0.1.8 // indirect
 	google.golang.org/grpc v1.45.0
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 replace (
