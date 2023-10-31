@@ -8,8 +8,9 @@ require (
 	github.com/Microsoft/go-winio v0.5.2
 	github.com/containerd/console v1.0.3
 	github.com/containerd/containerd v1.6.2
+	github.com/distribution/reference v0.5.0 // indirect
 	github.com/docker/buildx v0.8.1
-	github.com/docker/distribution v2.8.1+incompatible
+	github.com/docker/distribution v2.8.3+incompatible
 	github.com/emicklei/proto v1.9.0 // indirect
 	github.com/go-git/go-git/v5 v5.4.2
 	github.com/gofrs/flock v0.8.1
