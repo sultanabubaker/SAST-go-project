@@ -25,7 +25,7 @@ require (
 	github.com/opencontainers/image-spec v1.0.2
 	github.com/rs/zerolog v1.26.1
 	github.com/sergi/go-diff v1.2.0
-	github.com/spf13/cobra v1.4.0
+	github.com/spf13/cobra v1.8.0
 	github.com/spf13/viper v1.10.0
 	github.com/stretchr/testify v1.7.1
 	github.com/tonistiigi/fsutil v0.0.0-20220315205639-9ed612626da3
@@ -41,7 +41,7 @@ require (
 	golang.org/x/time v0.0.0-20210723032227-1f47c861a9ac
 	golang.org/x/tools v0.1.8 // indirect
 	google.golang.org/grpc v1.45.0
-	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b
+	gopkg.in/yaml.v3 v3.0.1
 )
 
 replace (
